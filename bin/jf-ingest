@@ -1,0 +1,16 @@
+#!/bin/sh
+# jf-ingest 手动执行包装脚本（Linux，纯标准库，不需要 venv/pip）
+#
+#   ./bin/jf-ingest preview
+#   ./bin/jf-ingest preview --only 3,17
+#
+# 说明：脚本只做「只读预览」；apply 尚未实现。
+set -eu
+
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+PY=${PYTHON:-python3}
+
+PYTHONPATH="$DIR/src${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH
+
+exec "$PY" -m jf_ingest "$@"

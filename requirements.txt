@@ -1,0 +1,3 @@
+# 运行时依赖（目标环境：Ubuntu + Python 3.10，无 pip）
+# 本项目刻意只使用标准库：pathlib / json / argparse / dataclasses / urllib / re
+# 不要在这里添加第三方包——服务器上装不了。

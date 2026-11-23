@@ -1,0 +1,258 @@
+# 自动识别试探结果（真实数据）
+
+- 顶层条目：203
+- 视频文件：1297
+
+## 分类统计
+
+| 类型 | 条目数 |
+| --- | ---: |
+| movie | 119 |
+| tv | 82 |
+| unknown | 2 |
+
+## 置信度
+
+| 类型 | high | medium | low |
+| --- | ---: | ---: | ---: |
+| movie | 80 | 38 | 1 |
+| tv | 7 | 75 | 0 |
+| unknown | 0 | 0 | 2 |
+
+## 标记分布
+
+| 标记 | 条目数 |
+| --- | ---: |
+| SEASON_ASSUMED_1 | 73 |
+| NO_YEAR | 38 |
+| EXTRAS | 10 |
+| TITLE_FROM_FILE | 10 |
+| STARTS_AT_2 | 5 |
+| DUP_EP | 5 |
+| YEAR_FROM_FILE | 4 |
+| HALF_EPISODE | 3 |
+| STARTS_AT_5 | 2 |
+| STARTS_AT_6 | 2 |
+| GAPS | 2 |
+| STARTS_AT_4 | 2 |
+| NO_VIDEO | 1 |
+| STARTS_AT_9 | 1 |
+| EP_GT_60 | 1 |
+| STARTS_AT_3 | 1 |
+| MIXED_OR_NO_EP | 1 |
+
+> 正片判定：1297 个视频中，95 个被标记为花絮/特典/菜单/CM（不进正片序列）。
+
+## 片名冲突（清洗后同名，可能是同一部剧的多个季度/版本）
+
+| 片名 | 条目 |
+| --- | --- |
+| com] | `[三角关系][1080P.HD-MKV-1.14G][中文字幕][2024菲律宾超给力剧情]` / `[小唐璜情史][1080P.HD-MP4-2.67G][中字][意大利超给力剧情]` / `[风流冤鬼][1080P.HD-MKV-2.38G][国语中字][香港超给力剧情]` / `[马夫手记][AI修复版MKV-1.6G][国粤双语中字][中国香港给力剧情]` |
+
+## 逐条目结果
+
+| # | 顶层目录 | 视频 | 类型 | 可信度 | 片名猜测 | 年份 | 季 | 集 | 标记 |
+| ---: | --- | ---: | --- | --- | --- | ---: | ---: | --- | --- |
+| 1 | `90后工厂打工妹` | 1 | movie | medium | 90后工厂打工妹 | 2017 |  |  | NO_YEAR YEAR_FROM_FILE |
+| 2 | `Draguse.Or.The.Infernal.Mansion.1976` | 1 | movie | high | Draguse Or The Infernal Mansion | 1976 |  |  |  |
+| 3 | `In.the.Sign.of.the.Taurus.1974` | 1 | movie | high | In the Sign of the Taurus | 1974 |  |  |  |
+| 4 | `Je.Brule.de.Partout.1979` | 1 | movie | high | Je Brule de Partout | 1979 |  |  |  |
+| 5 | `Lorna, the Exorcist (1974)` | 1 | movie | high | Lorna, the Exorcist | 1974 |  |  |  |
+| 6 | `Maladolescenza.1977` | 1 | movie | high | Maladolescenza | 1977 |  |  |  |
+| 7 | `Megalopolis.2024.WEB-DL.1080p.X264` | 1 | movie | high | Megalopolis | 2024 |  |  |  |
+| 8 | `Nelly` | 1 | movie | medium | Nelly | 2017 |  |  | NO_YEAR YEAR_FROM_FILE |
+| 9 | `Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)` | 27 | tv | medium | Nichijou | 2023 | 1 | 1-26 | SEASON_ASSUMED_1 EXTRAS:1 |
+| 10 | `Nobunagas.Ambition.Souzou.Sengoku.Risshiden.v1.0.6.Incl.9Dlcs-ALI213` | 0 | unknown | low |  |  |  |  | NO_VIDEO |
+| 11 | `Porno.Holocaust.1981` | 1 | movie | high | Porno Holocaust | 1981 |  |  |  |
+| 12 | `Shame.2011.LIMITED.1080p.BluRay.X264-AMIABLE` | 1 | movie | high | Shame | 2011 |  |  |  |
+| 13 | `The.Honey.Killer.2018.1080p.AMZN.WEB-DL.DDP2.0.H.264-NTG` | 1 | movie | high | The Honey Killer | 2018 |  |  |  |
+| 14 | `Tropic.Of.Deisre.1979` | 1 | movie | high | Tropic Of Deisre | 1979 |  |  |  |
+| 15 | `[BDrip] Link Click S02 [343-Labs][v2]` | 15 | tv | high | Link Click |  | 2 | 1-12 | EXTRAS:3 |
+| 16 | `[BDrip] Rock wa Lady no Tashinami Deshite S01 [343-Labs]` | 13 | tv | high | Rock wa Lady no Tashinami Deshite |  | 1 | 1-13 |  |
+| 17 | `[BDrip] Sengoku Youko S01 [7³ACG]` | 13 | tv | high | Sengoku Youko |  | 1 | 1-13 |  |
+| 18 | `[CheeseAni] DEAD DEAD DEMONS DEDEDEDE DESTRUCTION [0-17][CR-WebRip][1080p][HEVC+AAC][简繁内封]` | 13 | tv | medium | DEAD DEAD DEMONS DEDEDEDE DESTRUCTION |  | 1 | 5-17 | SEASON_ASSUMED_1 STARTS_AT_5 |
+| 19 | `[Comicat&Romanticat] Android wa Keiken Ninzuu ni Hairimasu ka (01-09Fin WEBRip 1080p AVC AAC SC)` | 9 | tv | medium | Android wa Keiken Ninzuu ni Hairimasu ka |  | 1 | 1-9 | SEASON_ASSUMED_1 |
+| 20 | `[Comicat] Haite Kudasai, Takamine-san (01-12Fin WEBRip 1080p AVC AAC SC)` | 12 | tv | medium | Haite Kudasai, Takamine-san |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 21 | `[Comicat][Giji Harem][01-12][1080P][GB][MP4]` | 12 | tv | medium | Giji Harem |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 22 | `[DBD-Raws][亚人酱有话要说][01-13TV全集+特典映像][1080P][BDRip][HEVC-10bit][简繁外挂][FLACx2][MKV]` | 22 | tv | medium | 亚人酱有话要说 |  | 1 | 1-13 | SEASON_ASSUMED_1 EXTRAS:9 |
+| 23 | `[DBD-Raws][伊人制造][1080P][BDRip][HEVC-10bit][FLACx2][MKV]` | 1 | movie | medium | 伊人制造 |  |  |  | NO_YEAR |
+| 24 | `[DBD-Raws][卫宫家今天的饭][01-13TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]` | 47 | tv | medium | 卫宫家今天的饭 |  | 1 | 1-13 | SEASON_ASSUMED_1 EXTRAS:34 |
+| 25 | `[DBD-Raws][憧憬成为魔法少女][01-04TV][BOX1][1080P][BDRip][HEVC-10bit][FLAC][MKV]` | 4 | tv | medium | 憧憬成为魔法少女 |  | 1 | 1-4 | SEASON_ASSUMED_1 |
+| 26 | `[DBD-Raws][欢迎来到日本，妖精小姐。][01-12TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]` | 11 | tv | medium | 欢迎来到日本，妖精小姐。 |  | 1 | 2-12 | SEASON_ASSUMED_1 STARTS_AT_2 |
+| 27 | `[DBD-Raws][罪恶装备 奋战：两位裁决者][01-08TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]` | 8 | tv | medium | 罪恶装备 奋战：两位裁决者 |  | 1 | 1-8 | SEASON_ASSUMED_1 |
+| 28 | `[DBD-Raws][魔法少女育成计划][01-12TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]` | 25 | tv | medium | 魔法少女育成计划 |  | 1 | 1-12 | SEASON_ASSUMED_1 EXTRAS:13 |
+| 29 | `[DMG&SumiSora&LoliHouse] Grisaia Phantom Trigger [01-13][WebRip 1080p HEVC-10bit AAC]` | 13 | tv | medium | Grisaia Phantom Trigger |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 30 | `[DMG&SumiSora&LoliHouse] Tomodachi no Imouto ga Ore ni dake Uzai [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Tomodachi no Imouto ga Ore ni dake Uzai |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 31 | `[H-Enc] Ore no Yubi de Midarero (BDRip 1080p HEVC FLAC)` | 8 | tv | medium | Ore no Yubi de Midarero |  | 1 | 1-8 | SEASON_ASSUMED_1 |
+| 32 | `[H-Enc] Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken (BDRip 1080p HEVC FLAC)` | 22 | tv | medium | Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken |  | 1 | 1-12 | SEASON_ASSUMED_1 EXTRAS:4 DUP_EP:5 |
+| 33 | `[HYSUB]30-sai made Doutei da to Mahou Tsukai ni Nareru Rashii[01-12][GB_MP4][1920X1080]` | 12 | tv | medium | 30-sai made Doutei da to Mahou Tsukai ni Nareru Rashii |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 34 | `[JYfansub][Boku no Kanojo ga Majimesugiru Sho-bitch na Ken][01-OAD][V2][BDRIP][GB][1080p][MP4]` | 6 | tv | medium | Boku no Kanojo ga Majimesugiru Sho-bitch na Ken |  | 1 | 6-10 | SEASON_ASSUMED_1 EXTRAS:1 STARTS_AT_6 |
+| 35 | `[KTXP][Hokkaido_Gals_Are_Super_Adorable!][GB_CN][HEVC_opus][1080p]` | 12 | tv | medium | Hokkaido_Gals_Are_Super_Adorable! |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 36 | `[KissSub][mono][01-12][1080P][GB][MP4]` | 12 | tv | medium | mono |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 37 | `[KyokuSai] Isekai Onsen Paradise [01-12][720P][WEB-DL][Premium]` | 12 | tv | medium | Isekai Onsen Paradise |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 38 | `[KyokuSai] ギルティホール [01-08][720P][WEB-DL][AVC AAC]` | 8 | tv | medium | ギルティホール |  | 1 | 1-8 | SEASON_ASSUMED_1 |
+| 39 | `[LKSUB][Chanto Suenai Kyuuketsuki-chan][01-12][1080P]` | 12 | tv | medium | Chanto Suenai Kyuuketsuki-chan |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 40 | `[LKSUB][Mahou Shoujo ni Akogarete][01-13][720P][AT-X]` | 13 | tv | medium | Mahou Shoujo ni Akogarete |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 41 | `[LKSUB][Make Heroine ga Oosugiru!][01-12][720P]` | 12 | tv | medium | Make Heroine ga Oosugiru! |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 42 | `[LPSub&LP-Raws] Hoshikuzu Telepath [BD 01-12 Fin][AVC AAC][1080p][CHS]` | 14 | tv | medium | Hoshikuzu Telepath |  | 1 | 1-12 | SEASON_ASSUMED_1 EXTRAS:2 |
+| 43 | `[LPSub] Sousou no Frieren [01-28 Fin][AVC AAC][1080p][JPSC]` | 28 | tv | medium | Sousou no Frieren |  | 1 | 1-28 | SEASON_ASSUMED_1 |
+| 44 | `[LY-RAW][BDRIP][Hensuki]` | 42 | tv | medium | Hensuki |  | 1 | 1-12 | SEASON_ASSUMED_1 EXTRAS:25 DUP_EP:6 GAPS:1 |
+| 45 | `[Lilith-Raws] Himesama Goumon no Jikan desu` | 11 | tv | medium | Himesama Goumon no Jikan desu |  | 1 | 2-12 | SEASON_ASSUMED_1 STARTS_AT_2 |
+| 46 | `[Lilith-Raws] Jaku-Chara Tomozaki-kun S02` | 13 | tv | high | Jaku-Chara Tomozaki-kun |  | 2 | 1-13 |  |
+| 47 | `[Lilith-Raws] Pon no Michi` | 11 | tv | medium | Pon no Michi |  | 1 | 2-12 | SEASON_ASSUMED_1 STARTS_AT_2 |
+| 48 | `[LoliHouse] Amagami-san Chi no Enmusubi [01-24][WebRip 1080p HEVC-10bit AAC]` | 24 | tv | medium | Amagami-san Chi no Enmusubi |  | 1 | 1-24 | SEASON_ASSUMED_1 |
+| 49 | `[LoliHouse] Douse, Koishite Shimaunda [WebRip 1080p HEVC-10bit AAC SRTx2]` | 12 | tv | medium | Douse, Koishite Shimaunda |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 50 | `[LoliHouse] Gachiakuta [01-24][WebRip 1080p HEVC-10bit AAC]` | 24 | tv | medium | Gachiakuta |  | 1 | 1-24 | SEASON_ASSUMED_1 |
+| 51 | `[LoliHouse] Gekai Elise [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Gekai Elise |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 52 | `[LoliHouse] Hitoribocchi no Isekai Kouryaku - [01-12][WebRip 1080p HEVC-10bit AAC]` | 4 | tv | medium | Hitoribocchi no Isekai Kouryaku |  | 1 | 9-12 | SEASON_ASSUMED_1 STARTS_AT_9 |
+| 53 | `[LoliHouse] Ingoku Danchi [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Ingoku Danchi |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 54 | `[LoliHouse] Isekai Shikkaku [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Isekai Shikkaku |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 55 | `[LoliHouse] Katsute Mahou Shoujo to Aku wa Tekitai shiteita [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Katsute Mahou Shoujo to Aku wa Tekitai shiteita |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 56 | `[LoliHouse] Kimi wa Meido-sama [01-12][WebRip 1080p HEVC-10bit AAC]` | 9 | tv | medium | Kimi wa Meido-sama |  | 1 | 4-12 | SEASON_ASSUMED_1 STARTS_AT_4 |
+| 57 | `[LoliHouse] METALLIC ROUGE [01-13][WebRip 1080p HEVC-10bit AAC]` | 8 | tv | medium | METALLIC ROUGE |  | 1 | 6-13 | SEASON_ASSUMED_1 STARTS_AT_6 |
+| 58 | `[LoliHouse] Mattaku Saikin no Tantei to Kitara [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Mattaku Saikin no Tantei to Kitara |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 59 | `[LoliHouse] Megumi no Daigo - Kyuukoku no Orange [01-23][WebRip 1080p HEVC-10bit AAC]` | 25 | tv | medium | Megumi no Daigo - Kyuukoku no Orange |  | 1 | 1-23 | SEASON_ASSUMED_1 HALF_EPISODE DUP_EP:2 |
+| 60 | `[LoliHouse] Nukitashi The Animation [01-11][WebRip 1080p HEVC-10bit AAC SRTx2]` | 11 | tv | medium | Nukitashi The Animation |  | 1 | 1-11 | SEASON_ASSUMED_1 |
+| 61 | `[LoliHouse] Onmyo Kaiten ReBirth [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Onmyo Kaiten ReBirth |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 62 | `[LoliHouse] Saigo ni Hitotsu dake Onegai Shitemo Yoroshii Deshou ka [01-13][WebRip 1080p HEVC-10bit AAC]` | 13 | tv | medium | Saigo ni Hitotsu dake Onegai Shitemo Yoroshii Deshou ka |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 63 | `[LoliHouse] Saikyou Tank no Meikyuu Kouryaku [WebRip 1080p HEVC-10bit AAC SRTx2]` | 12 | tv | medium | Saikyou Tank no Meikyuu Kouryaku |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 64 | `[LoliHouse] Sawaranaide Kotesashi-kun [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Sawaranaide Kotesashi-kun |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 65 | `[LoliHouse] Tasuuketsu [01-24][WebRip 1080p HEVC-10bit AAC]` | 24 | tv | medium | Tasuuketsu |  | 1 | 1-24 | SEASON_ASSUMED_1 |
+| 66 | `[LoliHouse] Tensei Shitara Slime Datta Ken 3rd Season [48.5-72][WebRip 1080p HEVC-10bit AAC]` | 26 | tv | medium | Tensei Shitara Slime Datta Ken |  | 3 | 48-72 | HALF_EPISODE DUP_EP:1 EP_GT_60 |
+| 67 | `[LoliHouse] Tensui no Sakuna-hime [01-13][WebRip 1080p HEVC-10bit AAC]` | 13 | tv | medium | Tensui no Sakuna-hime |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 68 | `[LoliHouse] VTuber Nanda ga Haishin Kiri Wasuretara Densetsu ni Natteta [01-12][WebRip 1080p HEVC-10bit AAC]` | 8 | tv | medium | VTuber Nanda ga Haishin Kiri Wasuretara Densetsu ni Natteta |  | 1 | 5-12 | SEASON_ASSUMED_1 STARTS_AT_5 |
+| 69 | `[LoliHouse] Yubisaki to Renren [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Yubisaki to Renren |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 70 | `[LoliHouse] Zutaboro Reijou wa Ane no Moto Konyakusha ni Dekiai sareru [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | Zutaboro Reijou wa Ane no Moto Konyakusha ni Dekiai sareru |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 71 | `[LoliHouse] hahanoha [01-12][WebRip 1080p HEVC-10bit AAC]` | 12 | tv | medium | hahanoha |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 72 | `[MBR-AZ029] 川口彩夏-放課後` | 1 | movie | medium | 川口彩夏-放課後 |  |  |  | NO_YEAR |
+| 73 | `[MILKs&LoliHouse] Everyday Host [01-24][WebRip 1080p HEVC-10bit AAC]` | 25 | tv | medium | Everyday Host |  | 1 | 1-24 | SEASON_ASSUMED_1 HALF_EPISODE DUP_EP:1 |
+| 74 | `[MMSUB] Hikari no Ou 2nd Season` | 10 | tv | high | Hikari no Ou |  | 2 | 1-10 |  |
+| 75 | `[Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru [01-13][WebRip 1080p HEVC-10bit AAC ASSx2]` | 13 | tv | medium | Kono Sekai wa Fukanzen Sugiru |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 76 | `[Nekomoe kissaten][LAZARUS][01-13][1080p][JPSC]` | 13 | tv | medium | LAZARUS |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 77 | `[Prejudice-Studio] 对我垂涎欲滴的非人少女 Watashi wo Tabetai Hitodenashi [01-13][Bilibili WEB-DL 1080P AVC 8bit AAC MP4][简体内嵌]` | 13 | tv | medium | 对我垂涎欲滴的非人少女 Watashi wo Tabetai Hitodenashi |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 78 | `[SAIO-Raws] プリズンスクール [BD 1920x1080 HEVC-10bit OPUS]` | 15 | tv | medium | プリズンスクール |  | 1 | 1-12 | SEASON_ASSUMED_1 EXTRAS:3 |
+| 79 | `[SHIGURE] Angels of Death [BDRip FLAC 1920x1080 HEVC CHT]` | 16 | tv | medium | Angels of Death |  | 1 | 1-16 | SEASON_ASSUMED_1 |
+| 80 | `[Sakurato] Bad Girl [01-12Fin][AVC-8bit 1080p AAC][CHS]` | 12 | tv | medium | Bad Girl |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 81 | `[Sakurato] Summer Pockets [01-26 Fin][AVC-8bit 1080p AAC][CHS]` | 26 | tv | medium | Summer Pockets |  | 1 | 1-26 | SEASON_ASSUMED_1 |
+| 82 | `[Sakurato] Tsuma, Shougakusei ni Naru [01-12Fin][HEVC-10bit 1080P AAC][CHS&CHT]` | 10 | tv | medium | Tsuma, Shougakusei ni Naru |  | 1 | 3-12 | SEASON_ASSUMED_1 STARTS_AT_3 |
+| 83 | `[Sakurato][20201004] Eternity Shinya no Nurekoi Channel [01-12 Fin v2][WebRip][1080p][CHT]` | 12 | tv | medium | Eternity Shinya no Nurekoi Channel |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 84 | `[Sakurato][20240108] Modaete yo, Adam-kun [01-08 Fin][TVRip][1080p][CHS]` | 7 | tv | medium | Modaete yo, Adam-kun |  | 1 | 2-8 | SEASON_ASSUMED_1 STARTS_AT_2 |
+| 85 | `[Sakurato][20250706] Deki Chau Made Kon [01-08 Fin][TVRip][1080p][CHS&JPN]` | 8 | tv | medium | Deki Chau Made Kon |  | 1 | 1-8 | SEASON_ASSUMED_1 |
+| 86 | `[Sakurato][202604] Ookii Onnanoko wa Suki Desuka？ [01-12 Fin][1080P][简体内嵌]` | 12 | tv | medium | Ookii Onnanoko wa Suki Desuka？ |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 87 | `[SubsPlease] Shin no Nakama S2` | 12 | tv | high | Shin no Nakama |  | 2 | 1-18 | GAPS:6 |
+| 88 | `[SweetSub] Shikanoko Nokonoko Koshitantan [01-12][WebRip][1080P][AVC 8bit][CHS]` | 12 | tv | medium | Shikanoko Nokonoko Koshitantan |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 89 | `[UHA-WINGS][Oroka na Tenshi wa Akuma to Odoru][x264 1080p][CHS]` | 12 | tv | medium | Oroka na Tenshi wa Akuma to Odoru |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 90 | `[UHA-WINGS][Overtake!][x264 1080p][CHS]` | 12 | tv | medium | Overtake! |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 91 | `[UHA-Wing][Suicide Squad Isekai][01-10][x264 WebRip 1080P][CHS]` | 10 | tv | medium | Suicide Squad Isekai |  | 1 | 1-10 | SEASON_ASSUMED_1 |
+| 92 | `[orion origin] Kyuujitsu no Warumono-san [01-12] [1080p] [H265 AAC] [CHS＆JPN]` | 12 | tv | medium | Kyuujitsu no Warumono-san |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 93 | `[orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]` | 12 | tv | medium | Majo to Yajuu |  | 1 | 1-12 | SEASON_ASSUMED_1 |
+| 94 | `[www.bttop.net].陷阱：致命的誘惑 [中文字幕]` | 1 | movie | medium | 陷阱：致命的誘惑 |  |  |  | NO_YEAR |
+| 95 | `[三明治摆烂组&Prejudice-Studio] 与游戏中心的少女异文化交流的故事 [01-12 合集][简日内嵌][H264 8bit 1080P]` | 11 | tv | medium | 与游戏中心的少女异文化交流的故事 |  | 1 | 2-12 | STARTS_AT_2 |
+| 96 | `[三角关系][1080P.HD-MKV-1.14G][中文字幕][2024菲律宾超给力剧情]` | 1 | movie | high | com] | 2024 |  |  | TITLE_FROM_FILE |
+| 97 | `[乘客][1080P.HD-MKV1.2G][2024首发菲律宾超给力剧情]` | 1 | movie | high | 乘客 | 2024 |  |  | TITLE_FROM_FILE |
+| 98 | `[台湾三级] 欲望街车1992 [国语中文][高清修复版]GIF出处系列` | 1 | movie | high | 欲望街车 | 1992 |  |  |  |
+| 99 | `[威而钢之雄霸天下.未删减][1080P版HD-MP4-5.43G][国语中字][张文慈香港给力喜剧]` | 1 | movie | medium | 1080P版HD-MP4-5.43G |  |  |  | NO_YEAR |
+| 100 | `[小唐璜情史][1080P.HD-MP4-2.67G][中字][意大利超给力剧情]` | 1 | movie | medium | com] |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 101 | `[恋爱公主：美臀诱惑][1080P版HD-MP4-4.76G][中字][日本给力剧情]` | 1 | movie | medium | 1080P版HD-MP4-4.76G |  |  |  | NO_YEAR |
+| 102 | `[日本] [女囚处刑人][AVI-1G][日本超给力剧情]` | 1 | movie | medium | 女囚处刑人 |  |  |  | NO_YEAR |
+| 103 | `[日本] [鬼夜叉][1080P.HD-MKV1.94G][日语中字][日本超给力剧情]` | 1 | movie | medium | 鬼夜叉 |  |  |  | NO_YEAR |
+| 104 | `[晚熟之情][1080P.HD-MP4-900M][中字][2024最新菲律宾超给力剧情]` | 1 | movie | high | 晚熟之情 Late Bloomer | 2024 |  |  | TITLE_FROM_FILE |
+| 105 | `[梦犯增强版][1080P.HD-MKV7.3G][日语中字][日本赤坂丽超给力剧情]` | 1 | movie | medium | 梦犯增强版 |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 106 | `[欲焰狂情][MP4-4.98GB][国语中字][香港超给力剧情]` | 1 | movie | medium | 欲焰狂情 |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 107 | `[歐美] [奴隶女猎人][1080P.HD-MP4-3.5G][捷克超给力剧情]` | 1 | movie | medium | 奴隶女猎人 |  |  |  | NO_YEAR |
+| 108 | `[皇帝保重][DVD-MP4-1G][国语中字][香港超给力剧情]` | 1 | movie | medium | DVD-MP4-1G |  |  |  | NO_YEAR |
+| 109 | `[社會有罪][1080P.HD-MP4-4.16G][英語中字][美國超給力劇情]` | 1 | movie | medium | 美國超給力劇情 |  |  |  | NO_YEAR |
+| 110 | `[私人红灯区][1080P版HD-MP4-6G][中字][欧美黑丝长腿女神给力剧情]` | 1 | movie | medium | 1080P版HD-MP4-6G |  |  |  | NO_YEAR |
+| 111 | `[血恋][720P.HD-MP41.79G][中字][香港超给力剧情]` | 1 | movie | medium | 血恋 |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 112 | `[风流冤鬼][1080P.HD-MKV-2.38G][国语中字][香港超给力剧情]` | 1 | movie | medium | com] |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 113 | `[马夫手记][AI修复版MKV-1.6G][国粤双语中字][中国香港给力剧情]` | 1 | movie | medium | com] |  |  |  | TITLE_FROM_FILE NO_YEAR |
+| 114 | `tto@www.18p2p.com@三奸` | 1 | movie | medium | 三奸 |  |  |  | NO_YEAR |
+| 115 | `【BT首发】【BTshoufa.com】[欲海潮4][1080p.BluRayMKV][1.81GB][中文字幕]` | 1 | movie | medium | 欲海潮4 |  |  |  | NO_YEAR |
+| 116 | `【更多高清电影访问 www.BBQDDQ.com】欲海潮[双语字幕].Poison.Ivy.1992.1080p.BluRay.x264.DTS.2.0-BBQDDQ 10.84GB` | 1 | movie | high | 欲海潮 | 1992 |  |  |  |
+| 117 | `【更多高清电影访问 www.mkvchina.com】圣母[中文字幕].Benedetta.2021.BluRay.1080p.DTS-HD.MA.5.1.x265-10010@MKVChina 9.51GB` | 1 | movie | high | MKVChina 9 51GB | 2021 |  |  |  |
+| 118 | `【首发于高清影视之家 www.BBQDDQ.com】杀人者的记忆法[简繁英字幕].Memoir.of.a.Murderer.2017.DC.BluRay.1080p.DTS-HD.MA.5.1.x265.10bit-ALT` | 1 | movie | high | 杀人者的记忆法 | 2017 |  |  |  |
+| 119 | `【首发于高清影视之家 www.BBQDDQ.com】野蛮交易[中文字幕].Furioza.2021.1080p.BluRay.DTS-HD.MA.5.1.x265.10bit-DreamHD` | 1 | movie | high | 野蛮交易 | 2021 |  |  |  |
+| 120 | `【高清影视之家发布 www.BBEBBB.com】抚慰[中文字幕].Himas.2024.1080p.CATCHPLAY.WEB-DL.H264.AAC-QuickIO` | 1 | movie | high | 抚慰 | 2024 |  |  |  |
+| 121 | `【高清影视之家发布 www.BBEBBB.com】玛丽！玛丽！[简繁字幕].Mary.Mary.1977.Bluray.1080p.x265.10bit.FLAC-SSDSSE` | 1 | movie | high | 玛丽！玛丽！ | 1977 |  |  |  |
+| 122 | `【高清影视之家发布 www.BBEBBB.com】美人猎色[简繁英字幕].XX.Beautiful.Hunter.1994.1080p.BluRay.x265.10bit.FLAC.2.0-QuickIO` | 1 | movie | high | 美人猎色 | 1994 |  |  |  |
+| 123 | `【高清影视之家发布 www.BBEDDE.com】啊！女人，猥歌[简繁字幕].Oh.Woman.A.Dirty.Song.1981.BluRay.1080p.x265.10bit.FLAC-SSDSSE` | 1 | movie | high | 啊！女人，猥歌 | 1981 |  |  |  |
+| 124 | `【高清影视之家发布 www.BBEGGE.com】白百合[简繁字幕].White.Lily.2016.BluRay.1080p.x265.10bit.DDP5.1.PROPER-SSDSSE` | 1 | movie | high | 白百合 | 2016 |  |  |  |
+| 125 | `【高清影视之家发布 www.BBEGGE.com】秘书[简繁英字幕].Secretary.2002.BluRay.1080p.DTS-HD.MA.7.1.x265.10bit-DreamHD` | 1 | movie | high | 秘书 | 2002 |  |  |  |
+| 126 | `【高清影视之家发布 www.BBQDDQ.com】女猫[简繁字幕].She.Cat.1983.BluRay.1080p.TrueHD2.0.x265.10bit-DreamHD` | 1 | movie | high | 女猫 | 1983 |  |  |  |
+| 127 | `【高清影视之家发布 www.BBQDDQ.com】白昼如焚[粤语配音+中文字幕].As.It.Burns.2024.1080p.WEB-DL.AAC.H264-ParkHD` | 1 | movie | high | 白昼如焚 | 2024 |  |  |  |
+| 128 | `【高清影视之家发布 www.HDBTHD.com】出卖她的肉体[中文字幕].Selling.Isobel.2017.1080p.Roku.WEB-DL.H264.AAC-GPTHD` | 1 | movie | high | 出卖她的肉体 | 2017 |  |  |  |
+| 129 | `【高清影视之家发布 www.HDBTHD.com】堕落[简繁字幕].Corruption.1983.BluRay.1080p.x265.10bit.FLAC-SSDSSE` | 1 | movie | high | 堕落 | 1983 |  |  |  |
+| 130 | `【高清影视之家发布 www.HDBTHD.com】清算人[国英多音轨+中文字幕].The.Liquidator.2011.2160p.WEB-DL.H265.HDR.AAC.2Audio-DreamHD` | 1 | movie | high | 清算人 | 2011 |  |  |  |
+| 131 | `【高清影视之家发布 www.HDBTHD.com】激情[简繁英字幕].Passion.2008.1080p.BluRay.x265.10bit.FLAC.2.0-SONYHD` | 1 | movie | high | 激情 | 2008 |  |  |  |
+| 132 | `【高清影视之家发布 www.HDBTHD.com】珍品[简繁英字幕].Curiosa.2019.1080p.BluRay.x265.10bit.DTS-SONYHD` | 1 | movie | high | 珍品 | 2019 |  |  |  |
+| 133 | `【高清影视之家发布 www.HDBTHD.com】生生活活[中文字幕].Talking.about.Sex.Eating.Talking.Fucking.2013.1080p.CATCHPLAY+.WEB-DL.AAC2.0.H.264-DreamHD` | 1 | movie | high | 生生活活 | 2013 |  |  |  |
+| 134 | `【高清影视之家发布 www.HDBTHD.com】粉红的窗帘[简繁字幕].Pink.Curtain.1982.BluRay.1080p.x265.10bit.FLAC-SSDSSE` | 1 | movie | high | 粉红的窗帘 | 1982 |  |  |  |
+| 135 | `【高清影视之家发布 www.HDBTHD.com】缉恶[国语配音+中文字幕].Hunt.The.Wicked.2024.2160p.WEB-DL.H265.DDP5.1-SONYHD` | 1 | movie | high | 缉恶 | 2024 |  |  |  |
+| 136 | `【高清影视之家发布 www.HDBTHD.com】美女试爆场[中文字幕].Skinford.Death.Sentence.2023.Bluray.1080p.AAC2.0.x264-DreamHD` | 1 | movie | high | 美女试爆场 | 2023 |  |  |  |
+| 137 | `【高清影视之家发布 www.HDBTHD.com】花容月貌[简繁英字幕].Young.and.Beautiful.2013.1080p.BluRay.x265.10bit.DTS-SONYHD` | 1 | movie | high | 花容月貌 | 2013 |  |  |  |
+| 138 | `【高清影视之家发布 www.HDBTHD.com】金手指[杜比视界版本][国语音轨+中文字幕].The.Goldfinger.2023.2160p.WEB-DL.H265.10bit.DV.DDP5.1.2Audio-GPTHD` | 1 | movie | high | 金手指 | 2023 |  |  |  |
+| 139 | `【高清影视之家发布 www.HDBTHD.com】错乱的一代[中文字幕].Destruction.Babies.2016.BluRay.1080p.AAC2.0.x264-DreamHD` | 1 | movie | high | 错乱的一代 | 2016 |  |  |  |
+| 140 | `【高清影视之家发布 www.HDBTHD.com】飞越疯人院[国语配音+中文字幕+特效字幕].One.Flew.Over.the.Cuckoo's.Nes.1975.BluRay.1080p.AAC2.0.x264-DreamHD` | 1 | movie | high | 飞越疯人院 | 1975 |  |  |  |
+| 141 | `【高清影视之家发布 www.SSDSSE.com】九条命[30帧率版本][中文字幕].Nine.Lives.2016.1080p.WEB-DL.AAC.H264-ParkHD` | 1 | movie | high | 九条命 | 2016 |  |  |  |
+| 142 | `【高清影视之家发布 www.SSDSSE.com】虎先生[中文字幕].Life.as.a.Cat.2019.1080p.WEB-DL.AAC.H264-ParkHD` | 1 | movie | high | 虎先生 | 2019 |  |  |  |
+| 143 | `【高清影视之家发布 www.SSDSSE.com】重返虎穴.2[简繁英字幕].Inside.Furioza.2025.1080p.NF.WEB-DL.DDP5.1.Atmos.H264-PandaQT` | 1 | movie | high | 重返虎穴 | 2025 |  |  |  |
+| 144 | `【高清影视之家发布 www.SSDSSE.com】青春转大人[中文字幕].Pullman.2020.1080p.WEB-DL.AAC.H264-ParkHD` | 1 | movie | high | 青春转大人 | 2020 |  |  |  |
+| 145 | `【高清影视之家发布 www.WHATMV.com】诅咒之城：玛雅[中文字幕].Curse.of.the.Mayans.2017.1080p.WEB-DL.AAC.H264-ParkHD` | 1 | movie | high | 诅咒之城：玛雅 | 2017 |  |  |  |
+| 146 | `【高清影视之家首发 www.BBEDDE.com】冷战[中文字幕].Cold.War.2018.BluRay.1080p.DTS.x265.10bit-DreamHD` | 1 | movie | high | 冷战 | 2018 |  |  |  |
+| 147 | `【高清影视之家首发 www.BBEDDE.com】强制措施[中文字幕].Compulsion.2016.BluRay.1080p.DTS-HD.MA.5.1.x265.10bit-DreamHD` | 1 | movie | high | 强制措施 | 2016 |  |  |  |
+| 148 | `【高清影视之家首发 www.BBEDDE.com】蝴蝶[粤语音轨+简繁英字幕].Butterfly.2004.BluRay.1080p.AC3.5.1.x265.10bit-DreamHD` | 1 | movie | high | 蝴蝶 | 2004 |  |  |  |
+| 149 | `不羁的心.Wild.at.Heart.1993.DVD.720P.H264.AAC.Mandarin.CHT&ENG` | 1 | movie | high | 不羁的心 Wild at Heart | 1993 |  |  |  |
+| 150 | `世界的尽头.2023.HD1080P.官方日语中字` | 1 | movie | high | 世界的尽头 | 2023 |  |  |  |
+| 151 | `他们是我的全部.Sila.Ay.Akin.2023.HD1080P.X264.AAC.Tagalog.CHS.BDYS` | 1 | movie | high | 他们是我的全部 Sila Ay Akin | 2023 |  |  |  |
+| 152 | `侦探艳史` | 1 | movie | medium | 侦探艳史 |  |  |  | NO_YEAR |
+| 153 | `勉强度日Mal Viver AKA Bad Living 2023 1080P` | 1 | movie | high | 勉强度日Mal Viver AKA Bad Living | 2023 |  |  |  |
+| 154 | `千火玫瑰.Caged.Beauties.1993.DVD.720P.H264.AAC.Mandarin.CHT&ENG` | 1 | movie | high | 千火玫瑰 Caged Beauties | 1993 |  |  |  |
+| 155 | `午夜叫声.Midnight.Love.1998.DVD.540P.H265.DD2.0.Mandarin.CHT` | 1 | movie | high | 午夜叫声 Midnight Love | 1998 |  |  |  |
+| 156 | `古惑仔激情篇之洪兴大飞哥.The.Legendary.1999.HD1080P.H265.AAC.Mandarin.CHS` | 1 | movie | high | 古惑仔激情篇之洪兴大飞哥 The Legendary | 1999 |  |  |  |
+| 157 | `团鬼六.女美容师绳饲育[简繁字幕].Female.Beautician.Rope.Discipline.1981.BluRay.1080p.x265.10bit.FLAC-SSDSSE` | 1 | movie | high | 团鬼六 女美容师绳饲育 | 1981 |  |  |  |
+| 158 | `团鬼六：美教师地狱责罚.[日语中字].Beautiful Teacher in Torture Hell.1985.JP.BluRay.1920x960p.x264.AC3` | 1 | movie | high | 团鬼六：美教师地狱责罚 | 1985 |  |  |  |
+| 159 | `墓中酷刑.2024.HD1080P.AAC.H264.CHS.BTSJ6` | 1 | movie | high | 墓中酷刑 | 2024 |  |  |  |
+| 160 | `家教高级课程.Private.Tutor.Advanced.Course.2016.HD720P.AAC.Korean.CHS` | 1 | movie | high | 家教高级课程 Private Tutor Advanced Course | 2016 |  |  |  |
+| 161 | `平凡职业造就世界最强 第三季.2024.1080p.CR.WEBRip.x264.AAC.CHS-LxyLab` | 16 | tv | high | 平凡职业造就世界最强 | 2024 | 3 | 1-16 |  |
+| 162 | `建国大业[国语配音+中文字幕].The.Founding.of.a.Republic.2009.2160p.WEB-DL.HDR.H265.AAC-QuickIO` | 1 | movie | high | 建国大业 | 2009 |  |  |  |
+| 163 | `恋爱公主：美臀诱惑 プリンセス 甘く危険な休日.2017.HD1080P.官方日语中字` | 1 | movie | high | 恋爱公主：美臀诱惑 プリンセス 甘く危険な休日 | 2017 |  |  |  |
+| 164 | `恶夜.E.Ye.1999.DVD.480P.H265.DD2.0.Mandarin.CHT` | 1 | movie | high | 恶夜 E Ye | 1999 |  |  |  |
+| 165 | `情窦初开 Tag-init.2023.HD1080P.官方他加禄语中字` | 1 | movie | high | 情窦初开 Tag-init | 2023 |  |  |  |
+| 166 | `愈合伴侣.Healing Mate_2014.KR.WEB-DL.1920x1080p.x264.AAC-KOOK.[韩语中字]` | 1 | movie | high | 愈合伴侣 Healing Mate | 2014 |  |  |  |
+| 167 | `揉情港都：熟女想爱爱 出会ってないけど、さようなら.2017.HD1080P.官方日语中字` | 1 | movie | high | 揉情港都：熟女想爱爱 出会ってないけど、さようなら | 2017 |  |  |  |
+| 168 | `新S女时代` | 1 | movie | medium | 新S女时代 | 2010 |  |  | NO_YEAR YEAR_FROM_FILE |
+| 169 | `日本夜伽话：扑倒太郎 日本夜伽話　パコってめでたし.2017.HD1080P.官方日语中字` | 1 | movie | high | 日本夜伽话：扑倒太郎 日本夜伽話　パコってめでたし | 2017 |  |  |  |
+| 170 | `暗杀兵团-激情模特儿` | 5 | unknown | low | 暗杀兵团-激情模特儿 |  |  |  | MIXED_OR_NO_EP |
+| 171 | `梦幻天堂·龙网(www.321n.net).BluRay.1080p.哀情口令.爱的密语` | 1 | movie | medium | 哀情口令 爱的密语 |  |  |  | NO_YEAR |
+| 172 | `梦幻天堂·龙网(www.321n.net).BluRay.1080p.手.日本2022大尺度` | 1 | movie | high | 手 日本2022大尺度 | 2022 |  |  |  |
+| 173 | `梦幻天堂·龙网(www.321n.net).为何是你？.欲情故纵` | 1 | movie | medium | 为何是你？ 欲情故纵 |  |  |  | NO_YEAR |
+| 174 | `梦幻天堂·龙网(www.321n.net).嘶嘶秘事` | 1 | movie | medium | 嘶嘶秘事 |  |  |  | NO_YEAR |
+| 175 | `梦幻天堂·龙网(www.321n.net).地狱里的天堂.禁忌之欲` | 1 | movie | medium | 地狱里的天堂 禁忌之欲 |  |  |  | NO_YEAR |
+| 176 | `梦幻天堂·龙网(www.321n.net).悦乐交叉点.悦楽交差点` | 1 | movie | medium | 悦乐交叉点 悦楽交差点 |  |  |  | NO_YEAR |
+| 177 | `梦幻天堂·龙网(www.321n.net).欲望飞扬.欲望俱乐部` | 1 | movie | medium | 欲望飞扬 欲望俱乐部 |  |  |  | NO_YEAR |
+| 178 | `梦幻天堂·龙网(www.321n.net).欲诱.菲律宾2025限制级` | 1 | movie | high | 欲诱 菲律宾2025限制级 | 2025 |  |  |  |
+| 179 | `梦幻天堂·龙网(www.321n.net).猎金·游戏.东方华尔街` | 1 | movie | medium | 猎金·游戏 东方华尔街 |  |  |  | NO_YEAR |
+| 180 | `梦幻天堂·龙网(www.321n.net).链锯人 剧场版：蕾塞篇` | 1 | movie | medium | 链锯人 剧场版：蕾塞篇 |  |  |  | NO_YEAR |
+| 181 | `梦幻天堂·龙网(www.LWgod.org).1080p.迪拜的女孩.拜金女王的性爱派对` | 1 | movie | medium | 迪拜的女孩 拜金女王的性爱派对 |  |  |  | NO_YEAR |
+| 182 | `活跳尸2.Bride.of.ReAnimator.1990.BD1080P.H265.AAC.English.CHS` | 1 | movie | high | 活跳尸2 Bride of ReAnimator | 1990 |  |  |  |
+| 183 | `活跳尸3.Beyond.ReAnimator.2003.BD1080P.H265.AAC.English.CHS` | 1 | movie | high | 活跳尸3 Beyond ReAnimator | 2003 |  |  |  |
+| 184 | `淫妇 Jezabel.2022.HD1080P.人工西班牙语中字` | 1 | movie | high | 淫妇 Jezabel | 2022 |  |  |  |
+| 185 | `火腿` | 1 | movie | medium | 火腿 |  |  |  | NO_YEAR |
+| 186 | `烹饪课.Putahe.2022.HD1080P.X264.AAC.Filipino.CHS-ENG.BDYS` | 1 | movie | high | 烹饪课 Putahe | 2022 |  |  |  |
+| 187 | `爱你所爱 Mahal ko ang mahal mo.2024.HD1080P.他加禄语中字-极速字幕组` | 1 | movie | high | 爱你所爱 Mahal ko ang mahal mo | 2024 |  |  |  |
+| 188 | `百合情韵` | 1 | movie | medium | 百合情韵 |  |  |  | NO_YEAR |
+| 189 | `第一流氓@18P2P赤色教室` | 1 | movie | medium | 赤色教室 |  |  |  | NO_YEAR |
+| 190 | `第一流氓@18p2p淫乱战争` | 1 | movie | medium | 淫乱战争 |  |  |  | NO_YEAR |
+| 191 | `第一流氓@18p2p舞夜姬` | 1 | movie | medium | 舞夜姬 |  |  |  | NO_YEAR |
+| 192 | `粉红色的梦.Pink.Dream.1992.DVD.540P.H265.DD2.0.Mandarin.CHT` | 1 | movie | high | 粉红色的梦 Pink Dream | 1992 |  |  |  |
+| 193 | `绿帽人妻 福マン婦人 ねっとり寝取られ.2018.HD1080P.官方日语中字` | 1 | movie | high | 绿帽人妻 福マン婦人 ねっとり寝取られ | 2018 |  |  |  |
+| 194 | `美味的世子三姐妹 Delicious Three Sisters 2018.HD1080P.x264.韩语中文字幕.Korean.chs.aac.mp4` | 1 | movie | high | 美味的世子三姐妹 Delicious Three Sisters | 2018 |  |  |  |
+| 195 | `美姐妹肉奴隶.数码修复版.Bishimai.Nikudorei` | 1 | movie | medium | 美姐妹肉奴隶 | 1986 |  |  | NO_YEAR YEAR_FROM_FILE |
+| 196 | `背中 Their Backs.2022.HD1080P.官方日语中字` | 1 | movie | high | 背中 Their Backs | 2022 |  |  |  |
+| 197 | `莉妮萨 Nerisa.2021.HD1080P.他加禄语中字-极速字幕组` | 1 | movie | high | 莉妮萨 Nerisa | 2021 |  |  |  |
+| 198 | `豪门贵妇 Bluebird Films 2011 中文字幕.mp4` | 1 | movie | low | 豪门贵妇 Bluebird Films 2011 中文字幕 | 2011 |  |  | TITLE_FROM_FILE |
+| 199 | `迷宫饭` | 22 | tv | medium | 迷宫饭 |  | 1 | 4-24 | SEASON_ASSUMED_1 STARTS_AT_4 |
+| 200 | `道@sexinsex.net@美女海滩Beach Heat Miami[13集全]` | 13 | tv | medium | 美女海滩Beach Heat Miami |  | 1 | 1-13 | SEASON_ASSUMED_1 |
+| 201 | `酒吧.The.Bar.2017.1080p.BluRay.x264.CHS-MP44K` | 1 | movie | high | 酒吧 The Bar | 2017 |  |  |  |
+| 202 | `陷阱.Deep.Trap.2015.1080p.BluRay.x264.CHS-BT4K` | 1 | movie | high | 陷阱 Deep Trap | 2015 |  |  |  |
+| 203 | `香港奸杀奇案.Suburb.Murder.1992.HD1080P.X264.AAC.国粤双语中字无水印` | 1 | movie | high | 香港奸杀奇案 Suburb Murder | 1992 |  |  |  |

@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "source": "/data/jellyfin/uploads",
+    "movies": "/data/jellyfin/movies",
+    "tvshows": "/data/jellyfin/tvshows",
+    "reports": "./logs"
+  },
+  "behavior": {
+    "mode": "preview",
+    "stable_seconds": 0,
+    "keep_episode_title": true,
+    "max_episodes_in_md": 5
+  },
+  "subtitle": {
+    "enabled": true,
+    "map_language": false
+  },
+  "manifest": {
+    "enabled": true,
+    "name": "jf-ingest",
+    "format": "md",
+    "merge": true,
+    "include_skipped": true
+  }
+}

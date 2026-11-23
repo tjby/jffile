@@ -1,0 +1,23 @@
+# 虚拟环境
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 运行产物
+logs/
+reports/
+*.log
+
+# 编辑器
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

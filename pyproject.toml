@@ -1,0 +1,29 @@
+[project]
+name = "jf-ingest"
+version = "0.3.0"
+description = "把上传目录中的影视文件整理成 Jellyfin 可识别的目录结构"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9,<10",
+    "ruff>=0.17",
+]
+
+[project.scripts]
+jf-ingest = "jf_ingest.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

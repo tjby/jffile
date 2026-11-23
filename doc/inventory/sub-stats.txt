@@ -1,0 +1,77 @@
+字幕文件 167，视频 1297
+
+1) 所在目录没有视频的字幕: 12
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [01] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [02] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [03] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [04] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [05] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [06] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [07] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [08] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [09] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [10] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [11] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [12] [1080p] [H265 AAC] [CHS＆JPN].sup
+
+2) 同目录前缀匹配成功的字幕: 154，孤儿: 13
+   [DBD-Raws][欢迎来到日本，妖精小姐。][01-12TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]/[DBD-Raws][Nihon e Youkoso Elf-san.][01][1080P][BDRip][HEVC-10bit][FLAC].tc.srt
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [01] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [02] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [03] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [04] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [05] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [06] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [07] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [08] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [09] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [10] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [11] [1080p] [H265 AAC] [CHS＆JPN].sup
+   [orion origin] Majo to Yajuu [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup/[orion origin] Majo to Yajuu [12] [1080p] [H265 AAC] [CHS＆JPN].sup
+
+3) 每个视频的字幕份数分布:
+   1 份字幕: 2 个视频
+   2 份字幕: 76 个视频
+   合计有外挂字幕的视频: 78
+
+4) 字幕名里出现的语言/标志段:
+   tc: 70
+   sc: 69
+   chi: 26
+   chs: 7
+
+5) 压缩包 29 个，其中疑似含字幕/字体: 24
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/Danmu.chs (TV+OAD)_zip-(xml,ass)/Danmu.chs (TV+OAD) (2023-03-27)_xml,ass.zip
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/Manga (1 sets 1 books)_zip-jpg_sub jpn/日常 (10巻)；著者：あらゐけいいち；日本語 (jpg).zip
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/ReNamer Lite_6.2.0.2 beta.zip
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/Subtitle.chs (TV+OAD)_zip-ass/Subtitle.chs (TV+OAD)_ass.zip
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/TV+OAD_BDrip_1080P_x265_flac,aac,ac3_dub jpn sub chs/[VCB-Studio] Nichijou [Ma10p_1080p]/SPs.zip
+   Nichijou_TV+OAD+Manga+Music+Other; dub jpn sub chs (2023-05-13)/Wikipedia (chs×11 jpn×10 eng×9)/Wikipedia (chs×11 jpn×10 eng×9).zip
+   [CheeseAni] DEAD DEAD DEMONS DEDEDEDE DESTRUCTION [0-17][CR-WebRip][1080p][HEVC+AAC][简繁内封]/[CheeseAni] DEAD DEAD DEMONS DEDEDEDE DESTRUCTION [Fonts][0-17][CR-WebRip].7z
+   [CheeseAni] DEAD DEAD DEMONS DEDEDEDE DESTRUCTION [0-17][CR-WebRip][1080p][HEVC+AAC][简繁内封]/[CheeseAni] DEAD DEAD DEMONS DEDEDEDE DESTRUCTION [Subtitles][0-17][CR-WebRip].7z
+   [DBD-Raws][卫宫家今天的饭][01-13TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]/Fonts/Fonts.rar
+   [DMG&SumiSora&LoliHouse] Grisaia Phantom Trigger [01-13][WebRip 1080p HEVC-10bit AAC]/[DMG&SumiSora&LoliHouse] Grisaia Phantom Trigger - Fonts.7z
+   [DMG&SumiSora&LoliHouse] Grisaia Phantom Trigger [01-13][WebRip 1080p HEVC-10bit AAC]/[DMG&SumiSora&LoliHouse] Grisaia Phantom Trigger - Subtitles.7z
+   [DMG&SumiSora&LoliHouse] Tomodachi no Imouto ga Ore ni dake Uzai [01-12][WebRip 1080p HEVC-10bit AAC]/[DMG&SumiSora&LoliHouse] imouza - Fonts.rar
+   [DMG&SumiSora&LoliHouse] Tomodachi no Imouto ga Ore ni dake Uzai [01-12][WebRip 1080p HEVC-10bit AAC]/[DMG&SumiSora&LoliHouse] imouza - Subtitles.rar
+   [LY-RAW][BDRIP][Hensuki]/[Nekomoe kissaten&LoliHouse] HenSuki - Fonts - [8C7A287C].7z
+   [LY-RAW][BDRIP][Hensuki]/[Nekomoe kissaten&LoliHouse] HenSuki - Subtitles - [B38C1150].7z
+   [MILKs&LoliHouse] Everyday Host [01-24][WebRip 1080p HEVC-10bit AAC]/[MILKs&LoliHouse] Everyday Host - Fonts.7z
+   [MILKs&LoliHouse] Everyday Host [01-24][WebRip 1080p HEVC-10bit AAC]/[MILKs&LoliHouse] Everyday Host - Subtitles.7z
+   [Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru [01-13][WebRip 1080p HEVC-10bit AAC ASSx2]/[Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru - Fonts.7z
+   [Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru [01-13][WebRip 1080p HEVC-10bit AAC ASSx2]/[Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru - Subtitles.7z
+   [Sakurato] Summer Pockets [01-26 Fin][AVC-8bit 1080p AAC][CHS]/Fonts.zip
+   [Sakurato] Summer Pockets [01-26 Fin][AVC-8bit 1080p AAC][CHS]/Subtitles.zip
+   [Sakurato] Tsuma, Shougakusei ni Naru [01-12Fin][HEVC-10bit 1080P AAC][CHS&CHT]/Fonts.zip
+   [Sakurato] Tsuma, Shougakusei ni Naru [01-12Fin][HEVC-10bit 1080P AAC][CHS&CHT]/Subtitles.zip
+   [orion origin] Kyuujitsu no Warumono-san [01-12] [1080p] [H265 AAC] [CHS＆JPN]/1-12 sup.zip
+
+6) 图片 224 个
+    189  [H-Enc] Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken (BDRip 1080p HEVC FLAC)
+     18  [DBD-Raws][卫宫家今天的饭][01-13TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
+      4  道@sexinsex.net@美女海滩Beach Heat Miami[13集全]
+      3  [晚熟之情][1080P.HD-MP4-900M][中字][2024最新菲律宾超给力剧情]
+      2  [Sakurato][202604] Ookii Onnanoko wa Suki Desuka？ [01-12 Fin][1080P][简体内嵌]
+
+6) 音频 52 个
+     52  [DBD-Raws][卫宫家今天的饭][01-13TV全集][1080P][BDRip][HEVC-10bit][简繁外挂][FLAC][MKV]
