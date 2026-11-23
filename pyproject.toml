@@ -1,6 +1,6 @@
 [project]
 name = "jf-ingest"
-version = "0.3.0"
+version = "0.4.0"
 description = "把上传目录中的影视文件整理成 Jellyfin 可识别的目录结构"
 readme = "README.md"
 requires-python = ">=3.10"

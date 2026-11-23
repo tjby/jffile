@@ -7,6 +7,8 @@ Jellyfin 规则（已核对官方文档与源码）：
 
 from __future__ import annotations
 
+import re
+
 from .textutil import sanitize, truncate_utf8
 
 # 名字里给文件名留的字节预算（Linux 单个文件名上限 255 字节）
@@ -70,7 +72,7 @@ def subtitle_file(video_stem: str, tags: list[str], ext: str) -> str:
 
 
 def extra_dir(kind: str) -> str:
-    """花絮子目录名（阶段一只用于报告里的“建议位置”）。"""
+    """花絮子目录名；空串表示放条目根目录（封面/主题曲）。"""
     return {
         "trailer": "trailers",
         "behindthescenes": "behind the scenes",
@@ -79,6 +81,10 @@ def extra_dir(kind: str) -> str:
         "scene": "scenes",
         "short": "shorts",
         "featurette": "featurettes",
+        "backdrop": "backdrops",
+        "audio_extra": "extras",
+        "cover": "",
+        "theme": "",
         "other": "extras",
     }.get(kind, "extras")
 
@@ -88,7 +94,7 @@ def join(*parts: str) -> str:
 
 
 def version_label(width: int | None = None, height: int | None = None) -> str | None:
-    """按分辨率生成多版本标签（阶段二使用）。"""
+    """按分辨率生成多版本标签（无 ffprobe 时只在有尺寸信息时用）。"""
     if width and height:
         if height >= 2000:
             return "2160p"
@@ -98,3 +104,29 @@ def version_label(width: int | None = None, height: int | None = None) -> str | 
             return "720p"
         return f"{height}p"
     return None
+
+
+_RES_LABEL = re.compile(r"(?i)(?<![a-z0-9])(2160p|4k|1080p|720p|480p|576p)(?![a-z0-9])")
+_QUAL_LABEL = re.compile(
+    r"(?i)(?<![a-z0-9])(hdr|dv|dolby.?vision|imax|directors? ?cut|director|"
+    r"extended|uncut|加长版|导演剪辑版)(?![a-z0-9])"
+)
+_DISC_LABEL = re.compile(r"(?i)(?<![a-z0-9])(cd\d|dvd\d|part\d|pt\d|disc\d|disk\d)(?![a-z0-9])")
+
+
+def version_from_name(name: str) -> str | None:
+    """从源文件名提取版本标签：分辨率 > 画质 > 版本词 > 碟/段。
+
+    服务器没有 ffprobe，所以只从文件名取；都没有就返回 None，
+    由执行器回退成 v2/v3 或 (2)。
+    """
+    for pattern in (_RES_LABEL, _QUAL_LABEL, _DISC_LABEL):
+        m = pattern.search(name)
+        if m:
+            return sanitize(m.group(1)).lower()
+    return None
+
+
+def with_version(stem: str, ext: str, label: str) -> str:
+    """`片名 (2023)` + `2160p` → `片名 (2023) - 2160p.mkv`。"""
+    return f"{stem} - {sanitize(label)}{ext}"

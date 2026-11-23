@@ -38,6 +38,8 @@ JUNK_EXT = {
 COVER_NAMES = {"cover", "folder", "poster", "fanart", "backdrop", "logo", "banner",
                "thumb", "landscape", "clearart", "disc", "clearlogo"}
 
+KIND_LABEL_ZH = {"movie": "电影", "tv": "剧集", "unknown": "无法判断"}
+
 # ---------------------------------------------------------------- 数据模型
 
 

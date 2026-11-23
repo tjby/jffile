@@ -24,6 +24,7 @@ ISSUE_TEXT = dict(media.ISSUES)
 # §3「必须人工干预」：前面已经决定程序不动的条目
 MANUAL_CODES = {
     "NOT_MEDIA", "NO_VIDEO", "NO_EPISODE", "TITLE_LOW_CONFIDENCE", "DUP_RELEASE",
+    "MULTI_PART",  # 分段电影只给第一个视频安排了目标，apply 不能把它拆散
 }
 MANUAL_ACTION = {
     "NOT_MEDIA": "跳过，不入库",
@@ -31,7 +32,23 @@ MANUAL_ACTION = {
     "NO_EPISODE": "人工判断是分段还是多集，改名后重跑",
     "TITLE_LOW_CONFIDENCE": "先把片名改对，再重新跑预览",
     "DUP_RELEASE": "两套 release 重叠：按决策整个条目不动，人工挑一套",
+    "MULTI_PART": "疑似同一部电影分段：人工确认后重跑，避免只搬走第一段",
 }
+
+def is_manual(plan: EntryPlan) -> bool:
+    """§3「必须人工干预」判定；apply 也用它决定跳过哪些条目。"""
+    return bool(set(plan.issues) & MANUAL_CODES) or plan.confidence == "low"
+
+
+def detail_group(plan: EntryPlan) -> str:
+    """§5 三分类：new / manual / auto（apply 只执行 auto）。"""
+    unknown = set(plan.issues) - set(media.ISSUES)
+    if plan.confidence == "low" or unknown:
+        return "new"
+    if is_manual(plan):
+        return "manual"
+    return "auto"
+
 
 # TSV 里不能出现制表符/换行
 _TSV_UNSAFE = re.compile(r"[\t\r\n]+")
@@ -43,6 +60,20 @@ def _tsv(value: object) -> str:
 
 def _fmt_ep(value: float) -> str:
     return str(int(value)) if float(value).is_integer() else f"{value:g}"
+
+
+def guard_report_dir(cfg: dict, path: Path) -> None:
+    """报告/日志目录绝不能落在 Jellyfin 库目录里，否则会被当媒体扫描。"""
+    for key in ("movies", "tvshows"):
+        lib = Path(cfg["paths"][key])
+        try:
+            path.resolve().relative_to(lib.resolve())
+            raise SystemExit(
+                f"拒绝写入：报告目录 {path} 位于 Jellyfin 库目录 {lib} 内。"
+                "请换一个目录（例如程序目录下的 logs/）。"
+            )
+        except ValueError:
+            continue
 
 
 class Reporter:
@@ -71,16 +102,7 @@ class Reporter:
         return paths
 
     def _guard(self, path: Path) -> None:
-        for key in ("movies", "tvshows"):
-            lib = Path(self.cfg["paths"][key])
-            try:
-                path.resolve().relative_to(lib.resolve())
-                raise SystemExit(
-                    f"拒绝写入：报告目录 {path} 位于 Jellyfin 库目录 {lib} 内。"
-                    "请换一个目录（例如程序目录下的 reports/）。"
-                )
-            except ValueError:
-                continue
+        guard_report_dir(self.cfg, path)
 
     # ------------------------------------------------------------ 统计
 
@@ -171,7 +193,7 @@ class Reporter:
 
     @staticmethod
     def _is_manual(plan: EntryPlan) -> bool:
-        return bool(set(plan.issues) & MANUAL_CODES) or plan.confidence == "low"
+        return is_manual(plan)
 
     @classmethod
     def _manual_reason(cls, plan: EntryPlan) -> tuple[str, str]:
@@ -263,12 +285,7 @@ class Reporter:
     @classmethod
     def _detail_group(cls, plan: EntryPlan) -> str:
         """§5 的三分类：新问题 / 需要人工干涉和处理 / 能够自动处理。"""
-        unknown = set(plan.issues) - set(media.ISSUES)
-        if plan.confidence == "low" or unknown:
-            return "new"
-        if cls._is_manual(plan):
-            return "manual"
-        return "auto"
+        return detail_group(plan)
 
     def _section_entries(self, lines: list[str]) -> None:
         add = lines.append

@@ -2,12 +2,12 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 文档版本 | v0.3（按真实数据评审修订，交付范围改为「阶段一：只读预览」） |
-| 编写日期 | 2026-11-18（v0.2：2026-11-19；v0.3：2026-11-19） |
+| 文档版本 | v0.4（阶段一只读预览 + 阶段二按确认表执行，均已实现） |
+| 编写日期 | 2026-11-18（v0.2/v0.3：2026-11-19；v0.4：2026-11-23） |
 | 程序名称（暂定） | `jf-ingest` |
 | 运行平台 | 仅 Linux（开发调试可在 Windows 上进行，见 §4） |
 | Python 版本 | **目标机 3.10.12，纯标准库**（开发机 3.13 仅用于跑测试，代码保持 3.10+ 兼容） |
-| 状态 | **阶段一（只读预览）已实现并跑过真实数据**；阶段二（执行）待评审 |
+| 状态 | **阶段一（只读预览）+ 阶段二（apply 执行）均已实现**；预览已跑过真实数据；执行未在真实媒体上运行 |
 
 ---
 
@@ -79,15 +79,15 @@ Jellyfin 通过「库目录（Library）+ 命名规范」来识别影视内容�
 
 设计上要求：核心逻辑与平台无关，Windows 开发机用临时目录跑单元测试。
 
-### 4.1 交付范围（阶段一）
+### 4.1 交付范围
 
 | 阶段 | 内容 | 状态 |
 | --- | --- | --- |
-| **阶段一** | **只读预览**：扫描、识别、生成报告（MD / JSON / 确认表 TSV），**不移动、不改名、不 chown** | 已实现（v0.3） |
-| 阶段二 | 按确认表执行：move、字幕改名、花絮归类、**写 `jf-ingest.md` 入库记录（FR-17）**、Jellyfin 刷新 | 待用户看完真实预览后决定 |
+| **阶段一** | **只读预览**：扫描、识别、生成报告（MD / JSON / 确认表 TSV），**不移动、不改名、不 chown** | 已实现（v0.3），真实数据已跑 |
+| **阶段二** | 按确认表执行：move（可选 copy/hardlink）、字幕改名、花絮归类、**写 `jf-ingest.md` 入库记录（FR-17）**、Jellyfin 刷新、apply 报告 | 已实现（v0.4），仅测试目录验证；未在真实媒体上执行 |
 
-> FR-17 的「预览侧」属于阶段一：`preview` 报告里会显示每个条目将来把 `jf-ingest.md` 写到哪、
-> 内容长什么样；真正落盘写文件要等阶段二的 `apply`（因为阶段一一律不写盘）。
+> `apply` 只执行预览报告 §5.3「能够自动处理」的条目；§3 / §5.1 / §5.2 一律跳过。
+> `plan.tsv` 用来选条目；逐文件源→目标映射取自同时间戳的 `preview.json`。
 
 ## 5. 输入 / 输出
 
@@ -503,7 +503,7 @@ movies/流浪地球2 (2023)/流浪地球2 (2023).mkv
   - `YYYYmmdd-HHMMSS-preview.md`：给**人**看的完整报告。章节固定为：§1 总览 / §2 问题标记汇总 / **§3 必须人工干预**（前面已决定程序不动的条目，阶段二跳过）/ **§4 未定**（程序暂时无法确认的细节：只有「未标季号，暂按第 1 季」）/ §5 逐条目目标路径 / §6 扫描时跳过的内容。§3 与 §4 **不重复列同一个条目**；§5 明细按处理方式分三组并依次排列：**5.1 从未见过的问题（需人工确认）**、**5.2 需要人工干涉和处理**、**5.3 能够自动处理的**，编号沿用 `plan.tsv`；前两组带 🔴 红色标记（用行内 HTML `<span style="color:red">` 实现，SSH 纯文本下看到的是 🔴 + 中文标记），原因与要做的事和 §3 一致。已确认的集号原样排序（04 → S01E04）、半集原数字（17.5 → E17.5）、文件名明写季号等不再列入「未定」，只在 §2 与 §5 记录；
   - `YYYYmmdd-HHMMSS-preview.json`：完整结构化数据（每集、每份字幕、每个问题码）；
   - `YYYYmmdd-HHMMSS-plan.tsv`：一行一个条目的**确认表**，后续阶段二按它执行；
-  - 阶段二再实现 `apply-*.json` / `apply-*.md`。
+  - `YYYYmmdd-HHMMSS-apply.md` / `YYYYmmdd-HHMMSS-apply.json`：执行后生成的结果报告（阶段二）。
 - **报告目录的硬性约束**：禁止落在 `movies/` 或 `tvshows/` 内，程序启动时校验，不合格直接退出（避免被 Jellyfin 当媒体扫描）。
 - 报告里对每个条目额外给出 **`jf-ingest.md` 的计划位置**（以及内容预览），
   方便在执行前先确认「记录会写成什么样」；预览阶段不写盘（见 FR-17）。
@@ -593,7 +593,7 @@ jf-ingest [preview|apply] [options]
   --verbose
   --version
 
-# —— 阶段二计划（当前调用会提示未实现）——
+# —— 阶段二：按确认表执行（默认 move，不覆盖）——
   apply --plan logs/xxx-plan.tsv
   --mode move|copy|hardlink
   --on-conflict skip|suffix
@@ -611,8 +611,8 @@ jf-ingest [preview|apply] [options]
 | --- | --- |
 | 0 | 预览成功（阶段一）/ 全部成功（阶段二） |
 | 1 | 部分条目失败/冲突（阶段二） |
-| 2 | 参数或配置错误、功能未实现 |
-| 3 | 有文件但全部无法识别（需人工） |
+| 2 | 参数、配置或确认表错误 |
+| 3 | 没有扫描到任何文件 / 没有可执行条目 |
 
 ### FR-12 通知 Jellyfin 刷新（决策 7：需要）
 
@@ -854,11 +854,14 @@ sudo .venv/bin/python -m jf_ingest apply          # 确认后执行
 | `subtitle.enabled` | bool | 是否分析字幕（阶段一只记录，不改名） |
 | `subtitle.map_language` | bool | 是否把 `sc/tc/chs/cht` 映射成 `zh-CN/zh-TW`（默认关，见决策 13） |
 
-**阶段二才会用到的字段**（先预留，程序当前不读）：
-`behavior.mode`(move)、`on_conflict`、`prune_empty_dirs`、`follow_symlinks`、
-`reuse_library_year`、`year_lookup`、`year_map`、`subtitle.name_mode`、`subtitle.keep_flags`、
-`extras.enabled`、`versions.*`、`permissions.*`、`jellyfin.*`、`override[]`。
-这些在阶段二实现时再写成 JSON 字段，语义与原来的 TOML 版本一致。
+**阶段二已读取的字段**：
+`behavior.mode`(默认 move)、`behavior.on_conflict`(默认 skip)、`behavior.prune_empty_dirs`、
+`permissions.*`、`jellyfin.*`、`manifest.*`（见下表）。
+
+**仍为预留、程序不读的字段**：
+`follow_symlinks`（暂由内部默认值控制）、`reuse_library_year`、`year_lookup`、`year_map`、
+`subtitle.name_mode`、`subtitle.keep_flags`、`extras.enabled`、`versions.*`、`override[]`。
+语义与原来的 TOML 版本一致，后续需要时再实现。
 
 其中 `manifest.*` 对应 FR-17，语义如下：
 
@@ -987,16 +990,16 @@ sudo .venv/bin/python -m jf_ingest apply          # 确认后执行
 | 14 | 压缩包里的字幕（24 个包，`.7z`/`.rar` 为主） | **先不处理，只记录** | 已实现：报告标 `SUBS_IN_ARCHIVE` 并列出包名 |
 | 15 | 同一部剧两套 release（Hensuki） | **整个条目不动，人工决定** | 已实现：标 `DUP_RELEASE`，不给目标路径 |
 | 16 | 73 个剧集没有季号 / 史莱姆第三季 `48.5-72` 连续编号 | **先记录，看过再说**；集号一律沿用原文件里的数字，只按数字排序（如 `04.mp4` `05.mp4` `06.mp4` → `S01E04` `S01E05` `S01E06`），**不重编号、不补 01–03**；半集按原数字当普通集（`E17.5`） | 已实现：标 `SEASON_ASSUMED_1` / `EP_RANGE_SUSPECT`，不自动加减偏移；`HALF_EPISODE` 已取消 |
-| 17 | 第一次执行的节奏 | **先只做预览，不执行** | 已实现：`preview` 只读；`apply` 直接返回「阶段二未实现」 |
+| 17 | 第一次执行的节奏 | **先只做预览，确认后再执行** | 已实现：`preview` 只读；`apply` 按确认表执行，默认 move，不覆盖；未在真实媒体上运行 |
 
 ### 14.4 由真实数据带来的环境修正
 
 | # | 原假设 | 实测 | 处理 |
 | --- | --- | --- | --- |
 | 18 | Python 3.12+、可装依赖 | 只有 **3.10.12，无 pip**，`venv` 也建不出 | 纯标准库；配置从 TOML 改 **JSON** |
-| 19 | 默认 `chown jellyfin:jellyfin` | 库目录已有 **默认 ACL `user:jellyfin:rwx`** | **不需要 chown、不需要 root**；`--chown` 降级为阶段二可选项 |
-| 20 | 可选 `copy` / `hardlink` | `/data` 只剩 **9.6 GB**（99% 满） | 只支持 `move`（同分区 rename，秒级） |
-| 21 | 需要调 API 刷新 | Jellyfin `EnableRealtimeMonitor = true` | 刷新保留为可选（阶段二），默认只提示 |
+| 19 | 默认 `chown jellyfin:jellyfin` | 库目录已有 **默认 ACL `user:jellyfin:rwx`** | **默认不 chown、不需要 root**；`--chown` 是阶段二可选项，非 root 只告警 |
+| 20 | 可选 `copy` / `hardlink` | `/data` 只剩 **9.6 GB**（99% 满） | 默认且推荐 `move`；`copy`/`hardlink` 必须显式指定，copy 会先做磁盘空间预检 |
+| 21 | 需要调 API 刷新 | Jellyfin `EnableRealtimeMonitor = true` | 刷新是阶段二可选项（有 Key 才调用），失败只告警，不影响迁移 |
 | 22 | 字幕分隔符 `.`/`-`/`_` 都行 | 源码 `MediaFlagDelimiters = ['.']`，**只认点**；`.ttml/.dfxp` 不支持 | 字幕名统一用 `.` 分隔；不支持的格式标记出来 |
 | 23 | TMDb 可补年份 | TMDb / TVDB / Bangumi **全部不可达**（服务器网络限制） | 联网补年份彻底放弃 |
 

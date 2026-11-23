@@ -3,8 +3,9 @@
 #
 #   ./bin/jf-ingest preview
 #   ./bin/jf-ingest preview --only 3,17
+#   ./bin/jf-ingest apply --plan logs/<时间>-plan.tsv
 #
-# 说明：脚本只做「只读预览」；apply 尚未实现。
+# 说明：preview 只读；apply 按确认表执行，默认 move，不覆盖已存在的不同文件。
 set -eu
 
 DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)

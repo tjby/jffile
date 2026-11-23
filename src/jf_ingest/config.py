@@ -18,17 +18,40 @@ DEFAULTS: dict[str, Any] = {
         "reports": "./logs",
     },
     "behavior": {
-        # 只读预览阶段：不移动、不改名、不 chown
-        "mode": "preview",
+        # apply 的落盘策略；preview / apply 由子命令决定，mode 只控制「怎么放」
+        "mode": "move",              # move | copy | hardlink
+        "on_conflict": "skip",       # skip | suffix
+        "prune_empty_dirs": False,
         "stable_seconds": 0,
         "keep_episode_title": True,
         # 报告里最多展示多少条集映射（完整内容始终在 JSON/TSV 里）
         "max_episodes_in_md": 5,
     },
     "subtitle": {
-        # 阶段一：字幕只记录、不改名
         "enabled": True,
         "map_language": False,
+    },
+    "manifest": {
+        # FR-17：apply 时在条目文件夹里写 jf-ingest.md
+        "enabled": True,
+        "name": "jf-ingest",
+        "format": "md",              # md | txt
+        "merge": True,
+        "include_skipped": True,
+    },
+    "permissions": {
+        # 服务器已有默认 ACL（user:jellyfin:rwx），默认不需要 chown
+        "enabled": False,
+        "owner": "jellyfin:jellyfin",
+        "dir_mode": "0755",
+        "file_mode": "0644",
+    },
+    "jellyfin": {
+        "refresh": True,             # 没配 api_key 时只告警，不影响迁移
+        "refresh_mode": "paths",     # paths | all
+        "url": "http://localhost:8096",
+        "api_key": "",               # 也可从环境变量 JF_API_KEY 读取
+        "timeout": 10,
     },
 }
 

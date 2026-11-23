@@ -48,10 +48,13 @@ class EntryPlan:
     notes: list[str]
     episodes: list[EpisodePlan] = field(default_factory=list)
     movie_target: str | None = None
+    movie_source: str | None = None
     subs: list[SubPlan] = field(default_factory=list)
     extras: list[ExtraPlan] = field(default_factory=list)
     media_count: int = 0
     total_size: int = 0
+    # FR-17：源条目的完整文件清单（相对源根），apply 写「原始结构」要用
+    source_files: list[str] = field(default_factory=list)
 
     @property
     def subtitle_count(self) -> int:
@@ -67,6 +70,18 @@ class EntryPlan:
 
 def _fmt(value: float) -> str:
     return str(int(value)) if float(value).is_integer() else f"{value:g}"
+
+
+def _attachment_kind(f: media.FileInfo) -> str | None:
+    """图片/音频附件的 Jellyfin 归类（FR-14）。"""
+    if f.ext in media.IMAGE_EXT:
+        parts = [p.lower() for p in f.dirname.split("/") if p]
+        if "backdrops" in parts or "backdrop" in parts:
+            return "backdrop"
+        return "cover"
+    if f.ext in media.AUDIO_EXT:
+        return "theme" if f.stem.lower() == "theme" else "audio_extra"
+    return None
 
 
 # 需要人看的标记（决定置信度）
@@ -107,6 +122,7 @@ def build(entry: media.Entry, cfg: dict) -> EntryPlan:
         notes=list(analysis.notes),
         media_count=len(analysis.media),
         total_size=entry.total_size,
+        source_files=[f.path for f in entry.files],
     )
 
     movies_dir = "movies"
@@ -120,6 +136,7 @@ def build(entry: media.Entry, cfg: dict) -> EntryPlan:
         folder = naming.movie_folder(analysis.title, analysis.year)
         name = naming.movie_file(analysis.title, analysis.year, video.ext)
         plan.movie_target = naming.join(movies_dir, folder, name)
+        plan.movie_source = video.path
         targets[video.path] = (naming.join(movies_dir, folder), name[: -len(video.ext)])
         if len(analysis.media) > 1:
             plan.notes.append(
@@ -195,6 +212,11 @@ def build(entry: media.Entry, cfg: dict) -> EntryPlan:
 
     for video, kind in analysis.extras:
         plan.extras.append(ExtraPlan(video.path, kind, video.size))
+    # FR-14：图片/主题曲跟宿主条目走；放库根会被 Jellyfin 当独立媒体
+    for att in entry.files:
+        kind = _attachment_kind(att)
+        if kind:
+            plan.extras.append(ExtraPlan(att.path, kind, att.size))
 
     if report.in_subdir:
         plan.issues.append("SUBS_IN_SUBDIR")
